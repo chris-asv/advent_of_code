@@ -13,6 +13,7 @@
 
 # Import pandas
 import pandas as pd
+import numpy as np
 
 #load input
 boxes_list = pd.read_csv("input_day_2.txt", header=None)\
@@ -61,3 +62,5 @@ boxes_list["total_ribbon"] = boxes_list.l_w_h.apply(lambda x: ribbon_by_box(x))
 
 # Total
 print(boxes_list.total_ribbon.sum())
+
+# Both parts of this puzzle are complete! They provide two gold stars: **
