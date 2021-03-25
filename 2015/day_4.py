@@ -13,13 +13,14 @@
 
 import hashlib
 
+key_s =open('input_day_4.txt').readlines()[0]
+
 num = 0
-hash_result = hashlib.md5(b"bgvyzdsv%d"%num).hexdigest()
+hash_result = hashlib.md5(bytes('%s%d'%(key_s, num), "utf8")).hexdigest()
 
 while hash_result[:5] != "00000":
     num += 1
-
-    hash_result = hashlib.md5(b"bgvyzdsv%d"%num).hexdigest()
+    hash_result = hashlib.md5(bytes('%s%d'%(key_s, num), "utf8")).hexdigest()
 
 print(num)
 
@@ -27,12 +28,13 @@ print(num)
 # --- Part Two ---
 
 # Now find one that starts with six zeroes.
+
 print("--- Part Two ---")
 num = 0
-hash_result = hashlib.md5(b"bgvyzdsv%d"%num).hexdigest()
+hash_result = hashlib.md5(bytes('%s%d'%(key_s, num), "utf8")).hexdigest()
 
 while hash_result[:6] != "000000":
     num += 1
-    hash_result = hashlib.md5(b"bgvyzdsv%d"%num).hexdigest()
+    hash_result = hashlib.md5(bytes('%s%d'%(key_s, num), "utf8")).hexdigest()
 
 print(num)
